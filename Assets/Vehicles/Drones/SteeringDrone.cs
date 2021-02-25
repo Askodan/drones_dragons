@@ -156,7 +156,7 @@ public abstract class SteeringDrone : MonoBehaviour
         turbo = axis_Turbo;
         if (butDown_Lights)
         {
-            flashLight.Change();
+            flashLight?.Change();
         }
         if (butDown_Motors)
         {
