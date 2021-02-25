@@ -1,3 +1,5 @@
+
+#if UNITY_EDITOR
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,7 +19,7 @@ namespace UnityStandardAssets.CinematicEffects
         bool CheckHdr(Bloom target)
         {
             var camera = target.GetComponent<Camera>();
-			return camera != null && camera.allowHDR;
+            return camera != null && camera.allowHDR;
         }
 
         void OnEnable()
@@ -52,3 +54,5 @@ namespace UnityStandardAssets.CinematicEffects
         }
     }
 }
+
+#endif

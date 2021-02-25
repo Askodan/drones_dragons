@@ -1,6 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
+#if UNITY_EDITOR
 namespace UnityStandardAssets.CinematicEffects
 {
     [CustomPropertyDrawer(typeof(MinAttribute))]
@@ -8,7 +9,7 @@ namespace UnityStandardAssets.CinematicEffects
     {
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
-            MinAttribute attribute = (MinAttribute) base.attribute;
+            MinAttribute attribute = (MinAttribute)base.attribute;
 
             if (property.propertyType == SerializedPropertyType.Integer)
             {
@@ -27,3 +28,5 @@ namespace UnityStandardAssets.CinematicEffects
         }
     }
 }
+
+#endif
