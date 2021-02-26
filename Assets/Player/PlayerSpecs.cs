@@ -30,7 +30,7 @@ public class PlayerSpecs : MonoBehaviour
         foreach (Camera cam in camera.GetComponentsInChildren<Camera>()) { cam.targetDisplay = camera.targetDisplay; }
         canvas = Instantiate(canvas);
         canvas.targetDisplay = camera.targetDisplay;
-        canvas.GetComponentInChildren<PlayerRebinder>().PlayerInput = GetComponent<PlayerInput>();
+        canvas.GetComponentInChildren<PlayerRebinder>(true).PlayerInput = GetComponent<PlayerInput>();
 
         if (!playerSteering)
             playerSteering = GetComponent<PlayerSteering>();
