@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.InputSystem;
 [RequireComponent(typeof(PlayerSteering))]
 
 public class PlayerSpecs : MonoBehaviour
@@ -29,6 +30,7 @@ public class PlayerSpecs : MonoBehaviour
         foreach (Camera cam in camera.GetComponentsInChildren<Camera>()) { cam.targetDisplay = camera.targetDisplay; }
         canvas = Instantiate(canvas);
         canvas.targetDisplay = camera.targetDisplay;
+        canvas.GetComponentInChildren<PlayerRebinder>().PlayerInput = GetComponent<PlayerInput>();
 
         if (!playerSteering)
             playerSteering = GetComponent<PlayerSteering>();
