@@ -137,6 +137,13 @@ public abstract class SteeringDrone : MonoBehaviour
     {
         RotateMotors(motors);
     }
+    private void OnDisable()
+    {
+        for (int i = 0; i < motors.Length; i++)
+        {
+            motors[i].Silent();
+        }
+    }
 
     void RotateMotors(DroneMotor[] _motors)
     {

@@ -33,7 +33,10 @@ public class DroneMotor : MonoBehaviour
         propeller.Rotate(Speed, CurrentThrust);
         motorSounds?.MakeSound(Speed);
     }
-
+    public void Silent()
+    {
+        motorSounds?.MakeSound(0);
+    }
     public void Setup(bool left)
     {
         propeller = GetComponentInChildren<Propeller>();
